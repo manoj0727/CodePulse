@@ -1,0 +1,19 @@
+{
+  "name": "tournament-server",
+  "version": "1.0.0",
+  "description": "Real-time Codeforces tournament server",
+  "main": "tournament-server.js",
+  "scripts": {
+    "start": "node tournament-server.js",
+    "dev": "nodemon tournament-server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "axios": "^1.4.0",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

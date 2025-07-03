@@ -607,8 +607,8 @@ function Results({ data }) {
 
       {/* AI Insights Section */}
       <AIInsights 
-        githubData={data.githubData} 
-        codeforcesData={data.codeforcesData} 
+        githubData={{ success: !!data.githubData, data: data.githubData }} 
+        codeforcesData={{ success: !!data.codeforcesData, data: data.codeforcesData }} 
       />
 
       {/* Achievement System */}

@@ -3,32 +3,15 @@ import React from 'react';
 import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import BattleArena from './pages/BattleArena';
+import Tournament from './pages/Tournament';
 import AdvancedBackground from './components/AdvancedBackground';
 import CustomCursor from './components/CustomCursor';
 import SmoothScroll from './components/SmoothScroll';
 import ScrollProgress from './components/ScrollProgress';
 import PageTransition from './components/PageTransition';
-import VoiceCommands from './components/VoiceCommands';
-import ThemeToggle from './components/ThemeToggle';
-import { useNavigate } from 'react-router-dom';
 import './styles/App.css';
 
 function AppContent() {
-  const navigate = useNavigate();
-  
-  const handleVoiceCommand = (command) => {
-    switch (command.action) {
-      case 'battle':
-        navigate('/battle');
-        break;
-      case 'analyze':
-        navigate('/');
-        break;
-      default:
-        break;
-    }
-  };
-
   return (
     <div className="App">
         <AdvancedBackground />
@@ -104,6 +87,26 @@ function AppContent() {
               }}>
                 ⚔️ Code Battle
               </Link>
+              <Link to="/tournament" style={{
+                color: 'white',
+                textDecoration: 'none',
+                padding: '8px 16px',
+                borderRadius: '20px',
+                background: 'linear-gradient(45deg, #00d4ff, #ff006e)',
+                transition: 'all 0.3s',
+                fontSize: '14px',
+                fontWeight: '600'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'scale(1.05)';
+                e.target.style.boxShadow = '0 0 20px rgba(0, 212, 255, 0.5)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'scale(1)';
+                e.target.style.boxShadow = 'none';
+              }}>
+                🏆 Tournament
+              </Link>
             </div>
           </div>
         </nav>
@@ -113,11 +116,10 @@ function AppContent() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/battle" element={<BattleArena />} />
+              <Route path="/tournament" element={<Tournament />} />
             </Routes>
           </PageTransition>
         </div>
-        <VoiceCommands onCommand={handleVoiceCommand} />
-        <ThemeToggle />
       </div>
   );
 }

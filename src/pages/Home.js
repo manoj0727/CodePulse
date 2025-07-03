@@ -3,11 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import InputForm from '../components/InputForm';
 import Results from '../components/Results';
-import AnimatedBackground from '../components/AnimatedBackground';
-import AILoader from '../components/AILoader';
 import LoadingScreen from '../components/LoadingScreen';
 import TextReveal from '../components/TextReveal';
-import Card3D from '../components/Card3D';
 import ScrollAnimation from '../components/ScrollAnimation';
 import { fetchGitHubData, fetchCodeforcesData, calculateProfileScore } from '../services/api';
 

@@ -12,7 +12,8 @@ function SmoothScroll() {
         if (!link) return;
         
         const href = link.getAttribute('href');
-        if (href && href.startsWith('#')) {
+        // Only handle anchor links that are not router paths
+        if (href && href.startsWith('#') && !href.includes('/')) {
           e.preventDefault();
           const target = document.querySelector(href);
           if (target) {
@@ -144,7 +145,8 @@ function SmoothScroll() {
       if (!link) return;
       
       const href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
+      // Only handle anchor links that are not router paths
+      if (href && href.startsWith('#') && !href.includes('/')) {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
