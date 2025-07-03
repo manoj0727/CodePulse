@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { gsap } from 'gsap';
 import TextReveal from './TextReveal';
 
@@ -10,6 +10,7 @@ function AIInsights({ githubData, codeforcesData }) {
 
   useEffect(() => {
     generateInsights();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [githubData, codeforcesData]);
 
   const generateInsights = () => {

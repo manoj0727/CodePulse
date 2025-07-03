@@ -9,6 +9,7 @@ function AchievementSystem({ githubData, codeforcesData }) {
 
   useEffect(() => {
     checkAchievements();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [githubData, codeforcesData]);
 
   const checkAchievements = () => {
@@ -213,7 +214,6 @@ function AchievementSystem({ githubData, codeforcesData }) {
   };
 
   const totalPoints = achievements.reduce((sum, a) => sum + (a.unlocked ? a.points : 0), 0);
-  const maxPoints = achievements.reduce((sum, a) => sum + a.points, 0);
 
   return (
     <div ref={containerRef} style={{ marginTop: '40px' }}>

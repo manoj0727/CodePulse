@@ -4,6 +4,7 @@
 
 [build.environment]
   GENERATE_SOURCEMAP = "false"
+  CI = "false"
 
 [[redirects]]
   from = "/*"
