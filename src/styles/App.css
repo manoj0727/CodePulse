@@ -1,31 +1,315 @@
 /* src/styles/App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #0a0a0a;
+  color: #ffffff;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Native smooth scrolling */
+html {
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+/* Smooth scroll container */
+.smooth-scroll-container {
+  will-change: transform;
+}
+
 .App {
     text-align: center;
     padding: 20px;
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    position: relative;
   }
+
+/* Glassmorphism base styles */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+.glass-dark {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+/* Animation keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.8), 0 0 60px rgba(0, 212, 255, 0.4); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
   
+h1 {
+  color: #ffffff;
+  font-size: 3.5em;
+  margin-bottom: 30px;
+  background: linear-gradient(45deg, #00d4ff, #ff006e, #00d4ff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 4s ease infinite;
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
   form {
-    margin: 20px 0;
+    margin: 20px auto;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
   }
   
   form div {
-    margin: 10px 0;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  label {
+    font-weight: 600;
+    color: #555;
+    min-width: 150px;
+    text-align: right;
+    margin-right: 10px;
   }
   
   input {
-    padding: 5px;
-    margin-left: 10px;
+    padding: 10px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: border-color 0.3s;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: #007bff;
   }
   
   button {
-    padding: 10px 20px;
-    background-color: #007bff;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  /* Results section styling */
+  div > h2 {
+    color: #ffffff;
+    margin-top: 40px;
+    font-size: 2em;
+    background: linear-gradient(45deg, #00d4ff, #ff006e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  div > p {
+    font-size: 18px;
+    color: #e0e0e0;
+    margin: 10px 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+
+  li {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+
+  li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+    border-color: rgba(0, 212, 255, 0.5);
+  }
+
+  /* Advanced button styles */
+  button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.5);
+  }
+
+  button:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* Glowing elements */
+  .glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  /* Floating elements */
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #00d4ff, #ff006e);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #ff006e, #00d4ff);
+  }
+
+  /* Hide VS indicator on mobile */
+  .vs-indicator-mobile-hide {
+    display: flex !important;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .vs-indicator-mobile-hide {
+      display: none !important;
+    }
+    h1 {
+      font-size: 2em;
+    }
+
+    form {
+      padding: 20px;
+      max-width: 100%;
+    }
+
+    form div {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    label {
+      text-align: left;
+      margin-bottom: 5px;
+      min-width: auto;
+    }
+
+    input {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .platform-card {
+      min-width: 100% !important;
+    }
+
+    /* Adjust grid layouts for mobile */
+    [style*="gridTemplateColumns"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 1.3em;
+    }
+
+    h3 {
+      font-size: 1.1em;
+    }
+
+    form {
+      padding: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    ul {
+      padding: 0 10px;
+    }
+
+    li {
+      font-size: 14px;
+      padding: 12px;
+    }
   }
   
-  button:hover {
-    background-color: #0056b3;
-  }
