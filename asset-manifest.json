@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/digital-profile-analyzer/static/css/main.91b3f727.css",
+    "main.js": "/digital-profile-analyzer/static/js/main.7bfcc614.js",
+    "static/js/977.63cc2af0.chunk.js": "/digital-profile-analyzer/static/js/977.63cc2af0.chunk.js",
+    "static/js/732.f0e0cec5.chunk.js": "/digital-profile-analyzer/static/js/732.f0e0cec5.chunk.js",
+    "index.html": "/digital-profile-analyzer/index.html",
+    "main.91b3f727.css.map": "/digital-profile-analyzer/static/css/main.91b3f727.css.map",
+    "main.7bfcc614.js.map": "/digital-profile-analyzer/static/js/main.7bfcc614.js.map",
+    "977.63cc2af0.chunk.js.map": "/digital-profile-analyzer/static/js/977.63cc2af0.chunk.js.map",
+    "732.f0e0cec5.chunk.js.map": "/digital-profile-analyzer/static/js/732.f0e0cec5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.91b3f727.css",
+    "static/js/main.7bfcc614.js"
+  ]
+}
