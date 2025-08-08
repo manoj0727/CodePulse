@@ -138,23 +138,25 @@ function ExportProfile({ profileData }) {
   return (
     <div 
       ref={buttonRef}
-      style={{
-        position: 'fixed',
-        bottom: '30px',
-        left: '30px',
-        zIndex: 1000
-      }}
     >
       <div 
-        className="glass-dark"
         style={{
-          padding: '15px',
-          borderRadius: '20px',
           display: 'flex',
-          gap: '10px',
+          gap: '8px',
+          flexWrap: 'wrap',
           alignItems: 'center'
         }}
       >
+        <span style={{
+          fontSize: '11px',
+          color: '#888',
+          fontWeight: 'bold',
+          textTransform: 'uppercase',
+          letterSpacing: '0.5px',
+          marginRight: '4px'
+        }}>
+          Export:
+        </span>
         <button
           onClick={exportAsPNG}
           className="export-btn"
@@ -162,10 +164,10 @@ function ExportProfile({ profileData }) {
             background: 'linear-gradient(135deg, #00d4ff, #0099cc)',
             border: 'none',
             color: 'white',
-            padding: '10px 15px',
-            borderRadius: '10px',
+            padding: '6px 10px',
+            borderRadius: '8px',
             cursor: 'pointer',
-            fontSize: '14px',
+            fontSize: '12px',
             fontWeight: 'bold',
             transition: 'all 0.3s ease',
             display: 'flex',
@@ -189,10 +191,10 @@ function ExportProfile({ profileData }) {
             background: 'linear-gradient(135deg, #ff006e, #cc0055)',
             border: 'none',
             color: 'white',
-            padding: '10px 15px',
-            borderRadius: '10px',
+            padding: '6px 10px',
+            borderRadius: '8px',
             cursor: 'pointer',
-            fontSize: '14px',
+            fontSize: '12px',
             fontWeight: 'bold',
             transition: 'all 0.3s ease',
             display: 'flex',
@@ -216,10 +218,10 @@ function ExportProfile({ profileData }) {
             background: 'linear-gradient(135deg, #00ff88, #00cc6a)',
             border: 'none',
             color: 'white',
-            padding: '10px 15px',
-            borderRadius: '10px',
+            padding: '6px 10px',
+            borderRadius: '8px',
             cursor: 'pointer',
-            fontSize: '14px',
+            fontSize: '12px',
             fontWeight: 'bold',
             transition: 'all 0.3s ease',
             display: 'flex',
@@ -243,10 +245,10 @@ function ExportProfile({ profileData }) {
             background: 'linear-gradient(135deg, #ffd700, #ffaa00)',
             border: 'none',
             color: 'white',
-            padding: '10px 15px',
-            borderRadius: '10px',
+            padding: '6px 10px',
+            borderRadius: '8px',
             cursor: 'pointer',
-            fontSize: '14px',
+            fontSize: '12px',
             fontWeight: 'bold',
             transition: 'all 0.3s ease',
             display: 'flex',

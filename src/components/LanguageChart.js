@@ -18,7 +18,7 @@ function LanguageChart({ languageStats, totalCount }) {
     
     segmentsRef.current.forEach((segment, index) => {
       if (index < sortedLanguages.length) {
-        const [language, stats] = sortedLanguages[index];
+        const [, stats] = sortedLanguages[index];
         const percentage = (stats.count / totalCount) * 100;
         const angle = (percentage / 100) * 360;
         

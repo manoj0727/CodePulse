@@ -24,11 +24,11 @@ function RatingProgressChart({ ratingHistory }) {
     const yScale = (rating) => height - padding - ((rating - minRating) / (maxRating - minRating)) * (height - 2 * padding);
 
     // Create path data
-    const pathData = ratingHistory
+    ratingHistory
       .map((contest, index) => {
-        const x = xScale(index);
-        const y = yScale(contest.newRating);
-        return `${index === 0 ? 'M' : 'L'} ${x} ${y}`;
+        xScale(index);
+        yScale(contest.newRating);
+        return `${index === 0 ? 'M' : 'L'}`;
       })
       .join(' ');
 

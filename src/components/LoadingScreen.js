@@ -72,7 +72,8 @@ function LoadingScreen() {
     });
 
     return () => {
-      particlesRef.current.forEach(particle => particle.remove());
+      const particles = particlesRef.current;
+      particles.forEach(particle => particle.remove());
     };
   }, []);
 

@@ -94,7 +94,8 @@ function ScoreVisualization({ score, maxScore, label, color, delay = 0 }) {
 
     return () => {
       // Cleanup particles
-      particlesRef.current.forEach(particle => {
+      const particles = particlesRef.current;
+      particles.forEach(particle => {
         if (particle.parentNode) {
           particle.parentNode.removeChild(particle);
         }

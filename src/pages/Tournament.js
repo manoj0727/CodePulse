@@ -185,20 +185,20 @@ function Tournament() {
     return `https://codeforces.com/problemset/problem/${problem.contest}/${problem.index}`;
   };
 
-  // Find match in bracket
-  const findMatch = (bracket, matchId) => {
-    if (!bracket) return null;
-    
-    const semifinal = bracket.semifinals?.find(m => m.id === matchId);
-    if (semifinal) return semifinal;
-    
-    const consolation = bracket.consolation?.find(m => m.id === matchId);
-    if (consolation) return consolation;
-    
-    if (bracket.finals?.id === matchId) return bracket.finals;
-    
-    return null;
-  };
+  // Find match in bracket - currently unused but may be needed later
+  // const findMatch = (bracket, matchId) => {
+  //   if (!bracket) return null;
+  //   
+  //   const semifinal = bracket.semifinals?.find(m => m.id === matchId);
+  //   if (semifinal) return semifinal;
+  //   
+  //   const consolation = bracket.consolation?.find(m => m.id === matchId);
+  //   if (consolation) return consolation;
+  //   
+  //   if (bracket.finals?.id === matchId) return bracket.finals;
+  //   
+  //   return null;
+  // };
 
   return (
     <div ref={containerRef} style={{ minHeight: '100vh', padding: '100px 20px 50px' }}>

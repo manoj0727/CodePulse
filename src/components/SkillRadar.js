@@ -26,7 +26,7 @@ function SkillRadar({ topTags }) {
     });
 
     // Create polygon path
-    const polygonPath = points.map(p => `${p.x},${p.y}`).join(' ');
+    points.map(p => `${p.x},${p.y}`).join(' ');
 
     // Animate polygon
     gsap.fromTo(polygonRef.current,
